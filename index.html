@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    .container{
+        display: flex;
+        gap:10px;
+        justify-content: center;
+        align-items: center;
+        background-color: whitesmoke;
+        box-shadow: 0 0 2px rgba(0,0,0,0.8);
+        padding: 20px;
+
+    }
+    img{
+        width:300px;
+        height:300px;
+    }
+.imageParentContainer{
+    border:2px solid black;
+    text-align: center;
+}
+@media(max-width:300px) {
+    img{
+        width:100px;
+        height:100px;
+    }
+}
+  </style>
+</head>
+<body>
+  <h1>Image Gallery</h1>
+  <div class="container">
+    <div class="imageParentContainer">
+        <img src="one.jpeg" alt="" id="imageParentContainer">
+    </div>
+    <div class="childContainer">
+        <div class="childImage1">
+            <img src="two.jpeg" alt="" onclick="setImage(this)">
+        </div>
+        <div class="childImage2">
+            <img src="three.jpeg" alt="" onclick="setImage(this)">
+        </div>
+        <div class="childImage3">
+            <img src="four.jpeg" alt="" onclick="setImage(this)">
+        </div>
+    </div>
+  </div>
+
+    <script>
+   function setImage(imageGallery){
+    let imageParentContainer=document.getElementById("imageParentContainer");
+    console.log(imageParentContainer.src);
+    imageParentContainer.src=imageGallery.src
+   }
+    </script>
+</body>
+</html> 
